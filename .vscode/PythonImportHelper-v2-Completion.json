@@ -65,7 +65,7 @@
         "documentation": {}
     },
     {
-        "label": "optim",
+        "label": "nn",
         "importPath": "torch",
         "description": "torch",
         "isExtraImport": true,
@@ -73,7 +73,7 @@
         "documentation": {}
     },
     {
-        "label": "nn",
+        "label": "optim",
         "importPath": "torch",
         "description": "torch",
         "isExtraImport": true,
@@ -176,6 +176,14 @@
         "description": "collections",
         "isExtraImport": true,
         "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -431,6 +439,33 @@
         "documentation": {}
     },
     {
+        "label": "Network",
+        "kind": 6,
+        "importPath": "001-basic-nn.04-generic-model",
+        "description": "001-basic-nn.04-generic-model",
+        "peekOfCode": "class Network(nn.Module):\n    def __init__(self, input_nodes, output_nodes, hidden_nodes_list, drop_p=0.5):        \n        super.__init__()\n        # create the input layer\n        self.input_layer = nn.Linear(input_nodes, hidden_nodes_list[0])\n        # create a list of tuples for the hidden layer nodes, and create hidden layers\n        hidden_layer_sizes = zip(hidden_nodes_list[:-1], hidden_nodes_list[1:])\n        self.hidden_layers = nn.ModuleList([nn.input(h1, h2) for (h1, h2) in hidden_layer_sizes])\n        # create the output layer\n        self.output_layer = nn.Linear(hidden_nodes_list[-1], output_nodes)",
+        "detail": "001-basic-nn.04-generic-model",
+        "documentation": {}
+    },
+    {
+        "label": "train",
+        "kind": 2,
+        "importPath": "001-basic-nn.04-generic-model",
+        "description": "001-basic-nn.04-generic-model",
+        "peekOfCode": "def train(model, trainloader, testloader, criterion, optimizer, epochs=5, print_every=50):\n    steps = 0\n    for e in range(epochs):\n        runningloss = 0\n        for images, labels in trainloader:\n            steps += 1\n            images = images.view(images.shape[0], -1)\n            optimizer.zero_grad()   # clear the previous grads\n            output = model.forward(images)   # get the output \n            loss = criterion(output, labels)    # get the loss",
+        "detail": "001-basic-nn.04-generic-model",
+        "documentation": {}
+    },
+    {
+        "label": "validation",
+        "kind": 2,
+        "importPath": "001-basic-nn.04-generic-model",
+        "description": "001-basic-nn.04-generic-model",
+        "peekOfCode": "def validation(model, testloader, criterion):\n    accuracy, loss = 0, 0\n    for images, labels in testloader:\n        images = images.view(images.shape[0], -1)\n        output = model.forward(images)\n        # calculate the loss\n        loss += criterion(output, labels)\n        # calculate the accuracy\n        ps = torch.exp(output)  #since output is in log_softmax, take exp to get actual probs\n        equality = (labels.data == ps.max(1)[1])",
+        "detail": "001-basic-nn.04-generic-model",
+        "documentation": {}
+    },
+    {
         "label": "model",
         "kind": 5,
         "importPath": "002-transfer-learning.01-transfer-learning",
@@ -521,30 +556,57 @@
         "documentation": {}
     },
     {
-        "label": "Network",
+        "label": "CharTokenizer",
         "kind": 6,
-        "importPath": "04-generic-model",
-        "description": "04-generic-model",
-        "peekOfCode": "class Network(nn.Module):\n    def __init__(self, input_nodes, output_nodes, hidden_nodes_list, drop_p=0.5):        \n        super.__init__()\n        # create the input layer\n        self.input_layer = nn.Linear(input_nodes, hidden_nodes_list[0])\n        # create a list of tuples for the hidden layer nodes, and create hidden layers\n        hidden_layer_sizes = zip(hidden_nodes_list[:-1], hidden_nodes_list[1:])\n        self.hidden_layers = nn.ModuleList([nn.input(h1, h2) for (h1, h2) in hidden_layer_sizes])\n        # create the output layer\n        self.output_layer = nn.Linear(hidden_nodes_list[-1], output_nodes)",
-        "detail": "04-generic-model",
+        "importPath": "003-transformers-basics.01-tokenizer",
+        "description": "003-transformers-basics.01-tokenizer",
+        "peekOfCode": "class CharTokenizer:\n    def __init__(self, vocab):\n        self.char_to_tokenid = { char:index  for index, char in enumerate(vocab)}\n        self.tokenid_to_char = { index:char  for index, char in enumerate(vocab)}\n    @staticmethod\n    def trainFromText(text):\n        vocab = sorted(list(set(text)))\n        return CharTokenizer(vocab)\n    def encode(self, text):\n        return torch.tensor([self.char_to_tokenid[ch] for ch in text])",
+        "detail": "003-transformers-basics.01-tokenizer",
         "documentation": {}
     },
     {
-        "label": "train",
-        "kind": 2,
-        "importPath": "04-generic-model",
-        "description": "04-generic-model",
-        "peekOfCode": "def train(model, trainloader, testloader, criterion, optimizer, epochs=5, print_every=50):\n    steps = 0\n    for e in range(epochs):\n        runningloss = 0\n        for images, labels in trainloader:\n            steps += 1\n            images = images.view(images.shape[0], -1)\n            optimizer.zero_grad()   # clear the previous grads\n            output = model.forward(images)   # get the output \n            loss = criterion(output, labels)    # get the loss",
-        "detail": "04-generic-model",
+        "label": "text",
+        "kind": 5,
+        "importPath": "003-transformers-basics.01-tokenizer",
+        "description": "003-transformers-basics.01-tokenizer",
+        "peekOfCode": "text = Path('../training-data/tiny-shakespeare.txt').read_text()\nprint(text[:1000])\nct = CharTokenizer.trainFromText(text)\na = \"hello world!\"\nencoded = ct.encode(a)\ndecoded = ct.decode(encoded)\nprint(encoded)\nprint(decoded)",
+        "detail": "003-transformers-basics.01-tokenizer",
         "documentation": {}
     },
     {
-        "label": "validation",
-        "kind": 2,
-        "importPath": "04-generic-model",
-        "description": "04-generic-model",
-        "peekOfCode": "def validation(model, testloader, criterion):\n    accuracy, loss = 0, 0\n    for images, labels in testloader:\n        images = images.view(images.shape[0], -1)\n        output = model.forward(images)\n        # calculate the loss\n        loss += criterion(output, labels)\n        # calculate the accuracy\n        ps = torch.exp(output)  #since output is in log_softmax, take exp to get actual probs\n        equality = (labels.data == ps.max(1)[1])",
-        "detail": "04-generic-model",
+        "label": "ct",
+        "kind": 5,
+        "importPath": "003-transformers-basics.01-tokenizer",
+        "description": "003-transformers-basics.01-tokenizer",
+        "peekOfCode": "ct = CharTokenizer.trainFromText(text)\na = \"hello world!\"\nencoded = ct.encode(a)\ndecoded = ct.decode(encoded)\nprint(encoded)\nprint(decoded)",
+        "detail": "003-transformers-basics.01-tokenizer",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "003-transformers-basics.01-tokenizer",
+        "description": "003-transformers-basics.01-tokenizer",
+        "peekOfCode": "a = \"hello world!\"\nencoded = ct.encode(a)\ndecoded = ct.decode(encoded)\nprint(encoded)\nprint(decoded)",
+        "detail": "003-transformers-basics.01-tokenizer",
+        "documentation": {}
+    },
+    {
+        "label": "encoded",
+        "kind": 5,
+        "importPath": "003-transformers-basics.01-tokenizer",
+        "description": "003-transformers-basics.01-tokenizer",
+        "peekOfCode": "encoded = ct.encode(a)\ndecoded = ct.decode(encoded)\nprint(encoded)\nprint(decoded)",
+        "detail": "003-transformers-basics.01-tokenizer",
+        "documentation": {}
+    },
+    {
+        "label": "decoded",
+        "kind": 5,
+        "importPath": "003-transformers-basics.01-tokenizer",
+        "description": "003-transformers-basics.01-tokenizer",
+        "peekOfCode": "decoded = ct.decode(encoded)\nprint(encoded)\nprint(decoded)",
+        "detail": "003-transformers-basics.01-tokenizer",
         "documentation": {}
     }
 ]
