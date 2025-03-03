@@ -20,6 +20,8 @@ class CharTokenizer:
     def vocabSize(self):
         return len(self.char_to_tokenid)
 
+
+# Runner code
 text = Path('../training-data/tiny-shakespeare.txt').read_text()
 print(text[:1000])
 

@@ -28,7 +28,7 @@ test_transform = transforms.Compose([
 ])
 
 # let's now load the images dataset
-data_dir = "pet_images"
+data_dir = "../training-data/pet_images"
 training_dataset = datasets.ImageFolder(data_dir+"/train", transform=training_transform)
 testing_dataset = datasets.ImageFolder(data_dir+"/test", transform=test_transform)
 
