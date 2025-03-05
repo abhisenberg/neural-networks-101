@@ -203,11 +203,59 @@
         "documentation": {}
     },
     {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "Dataset",
         "importPath": "torch.utils.data",
         "description": "torch.utils.data",
         "isExtraImport": true,
         "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "CharTokenizer",
+        "importPath": "a_01_tokenizer",
+        "description": "a_01_tokenizer",
+        "isExtraImport": true,
+        "detail": "a_01_tokenizer",
+        "documentation": {}
+    },
+    {
+        "label": "CharTokenizer",
+        "importPath": "a_01_tokenizer",
+        "description": "a_01_tokenizer",
+        "isExtraImport": true,
+        "detail": "a_01_tokenizer",
+        "documentation": {}
+    },
+    {
+        "label": "CharTokenizer",
+        "importPath": "a_01_tokenizer",
+        "description": "a_01_tokenizer",
+        "isExtraImport": true,
+        "detail": "a_01_tokenizer",
         "documentation": {}
     },
     {
@@ -241,6 +289,30 @@
         "description": "a_02_data_loader",
         "isExtraImport": true,
         "detail": "a_02_data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "AttentionHead",
+        "importPath": "a_03_attention_block",
+        "description": "a_03_attention_block",
+        "isExtraImport": true,
+        "detail": "a_03_attention_block",
+        "documentation": {}
+    },
+    {
+        "label": "MultiHeadAttention",
+        "importPath": "a_04_multi_head_attention",
+        "description": "a_04_multi_head_attention",
+        "isExtraImport": true,
+        "detail": "a_04_multi_head_attention",
+        "documentation": {}
+    },
+    {
+        "label": "FeedForward",
+        "importPath": "a_05_feedforward",
+        "description": "a_05_feedforward",
+        "isExtraImport": true,
+        "detail": "a_05_feedforward",
         "documentation": {}
     },
     {
@@ -725,7 +797,7 @@
         "kind": 6,
         "importPath": "a_003_transformers_basics.a_03_attention_block",
         "description": "a_003_transformers_basics.a_03_attention_block",
-        "peekOfCode": "class AttentionHead(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.WQ = nn.Linear(config['embedding_dim'], config['head_size'], config['use_bias'])\n        self.WK = nn.Linear(config['embedding_dim'], config['head_size'], config['use_bias'])\n        self.WV = nn.Linear(config['embedding_dim'], config['head_size'], config['use_bias'])\n        self.dropout = nn.Dropout(config[\"dropout_rate\"])\n        causal_attention_mask = torch.tril(torch.ones(config['context_size'], config['context_size']))\n        self.register_buffer(\"causal_attention_mask\", causal_attention_mask)\n        print(f\"WQ: {self.WQ}, WK: {self.WK}, Wv: {self.WV}\")",
+        "peekOfCode": "class AttentionHead(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.WQ = nn.Linear(config['embedding_dim'], config['head_size'], config['use_bias'])\n        self.WK = nn.Linear(config['embedding_dim'], config['head_size'], config['use_bias'])\n        self.WV = nn.Linear(config['embedding_dim'], config['head_size'], config['use_bias'])\n        self.dropout = nn.Dropout(config[\"dropout_rate\"])\n        causal_attention_mask = torch.tril(torch.ones(config['context_size'], config['context_size']))\n        self.register_buffer(\"causal_attention_mask\", causal_attention_mask)\n    def forward(self, input):   # (B, C, embedding_dim)",
         "detail": "a_003_transformers_basics.a_03_attention_block",
         "documentation": {}
     },
@@ -770,7 +842,7 @@
         "kind": 5,
         "importPath": "a_003_transformers_basics.a_03_attention_block",
         "description": "a_003_transformers_basics.a_03_attention_block",
-        "peekOfCode": "batch_size = 8\ncontext_size = 256\nembedding_dim = 768\n\"\"\"\ninp = torch.rand(1, config['context_size'], config['embedding_dim'])\nah = AttentionHead(config)\noutput = ah(inp)\nprint(output.shape)",
+        "peekOfCode": "batch_size = 8\ncontext_size = 256\nembedding_dim = 768\n\"\"\"\ninp = torch.rand(1, config['context_size'], config['embedding_dim'])\nah = AttentionHead(config)\noutput = ah(inp)\nprint(f\"Output size of a single attention head: {output.shape}\")",
         "detail": "a_003_transformers_basics.a_03_attention_block",
         "documentation": {}
     },
@@ -779,7 +851,7 @@
         "kind": 5,
         "importPath": "a_003_transformers_basics.a_03_attention_block",
         "description": "a_003_transformers_basics.a_03_attention_block",
-        "peekOfCode": "context_size = 256\nembedding_dim = 768\n\"\"\"\ninp = torch.rand(1, config['context_size'], config['embedding_dim'])\nah = AttentionHead(config)\noutput = ah(inp)\nprint(output.shape)",
+        "peekOfCode": "context_size = 256\nembedding_dim = 768\n\"\"\"\ninp = torch.rand(1, config['context_size'], config['embedding_dim'])\nah = AttentionHead(config)\noutput = ah(inp)\nprint(f\"Output size of a single attention head: {output.shape}\")",
         "detail": "a_003_transformers_basics.a_03_attention_block",
         "documentation": {}
     },
@@ -788,7 +860,7 @@
         "kind": 5,
         "importPath": "a_003_transformers_basics.a_03_attention_block",
         "description": "a_003_transformers_basics.a_03_attention_block",
-        "peekOfCode": "embedding_dim = 768\n\"\"\"\ninp = torch.rand(1, config['context_size'], config['embedding_dim'])\nah = AttentionHead(config)\noutput = ah(inp)\nprint(output.shape)",
+        "peekOfCode": "embedding_dim = 768\n\"\"\"\ninp = torch.rand(1, config['context_size'], config['embedding_dim'])\nah = AttentionHead(config)\noutput = ah(inp)\nprint(f\"Output size of a single attention head: {output.shape}\")",
         "detail": "a_003_transformers_basics.a_03_attention_block",
         "documentation": {}
     },
@@ -797,7 +869,7 @@
         "kind": 5,
         "importPath": "a_003_transformers_basics.a_03_attention_block",
         "description": "a_003_transformers_basics.a_03_attention_block",
-        "peekOfCode": "inp = torch.rand(1, config['context_size'], config['embedding_dim'])\nah = AttentionHead(config)\noutput = ah(inp)\nprint(output.shape)",
+        "peekOfCode": "inp = torch.rand(1, config['context_size'], config['embedding_dim'])\nah = AttentionHead(config)\noutput = ah(inp)\nprint(f\"Output size of a single attention head: {output.shape}\")",
         "detail": "a_003_transformers_basics.a_03_attention_block",
         "documentation": {}
     },
@@ -806,7 +878,7 @@
         "kind": 5,
         "importPath": "a_003_transformers_basics.a_03_attention_block",
         "description": "a_003_transformers_basics.a_03_attention_block",
-        "peekOfCode": "ah = AttentionHead(config)\noutput = ah(inp)\nprint(output.shape)",
+        "peekOfCode": "ah = AttentionHead(config)\noutput = ah(inp)\nprint(f\"Output size of a single attention head: {output.shape}\")",
         "detail": "a_003_transformers_basics.a_03_attention_block",
         "documentation": {}
     },
@@ -815,8 +887,224 @@
         "kind": 5,
         "importPath": "a_003_transformers_basics.a_03_attention_block",
         "description": "a_003_transformers_basics.a_03_attention_block",
-        "peekOfCode": "output = ah(inp)\nprint(output.shape)",
+        "peekOfCode": "output = ah(inp)\nprint(f\"Output size of a single attention head: {output.shape}\")",
         "detail": "a_003_transformers_basics.a_03_attention_block",
+        "documentation": {}
+    },
+    {
+        "label": "MultiHeadAttention",
+        "kind": 6,
+        "importPath": "a_003_transformers_basics.a_04_multi_head_attention",
+        "description": "a_003_transformers_basics.a_04_multi_head_attention",
+        "peekOfCode": "class MultiHeadAttention(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        # create a list of attentionheads, each initialized with the config param, length = config[\"heads_num\"]\n        heads_list = [AttentionHead(config) for _ in range(config[\"heads_num\"])]\n        # store that created list in ModuleList function\n        self.heads = nn.ModuleList(heads_list)\n        # create a linear layer with size embedding_dim * embedding_dim\n        self.linear = nn.Linear(config[\"embedding_dim\"], config[\"embedding_dim\"])\n        # create a dropout layer with rate = config[\"dropout_rate\"], store it in self.dropout",
+        "detail": "a_003_transformers_basics.a_04_multi_head_attention",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_04_multi_head_attention",
+        "description": "a_003_transformers_basics.a_04_multi_head_attention",
+        "peekOfCode": "text = Path('../training-data/tiny-shakespeare.txt').read_text()\ntokenizer = CharTokenizer.trainFromText(text)\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms",
+        "detail": "a_003_transformers_basics.a_04_multi_head_attention",
+        "documentation": {}
+    },
+    {
+        "label": "tokenizer",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_04_multi_head_attention",
+        "description": "a_003_transformers_basics.a_04_multi_head_attention",
+        "peekOfCode": "tokenizer = CharTokenizer.trainFromText(text)\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}",
+        "detail": "a_003_transformers_basics.a_04_multi_head_attention",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_04_multi_head_attention",
+        "description": "a_003_transformers_basics.a_04_multi_head_attention",
+        "peekOfCode": "config = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}\nconfig[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]",
+        "detail": "a_003_transformers_basics.a_04_multi_head_attention",
+        "documentation": {}
+    },
+    {
+        "label": "config[\"head_size\"]",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_04_multi_head_attention",
+        "description": "a_003_transformers_basics.a_04_multi_head_attention",
+        "peekOfCode": "config[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]\n####### Runner code #######\ninput = torch.rand(8, config[\"context_size\"], config[\"embedding_dim\"])\nmha = MultiHeadAttention(config)\noutput = mha(input)\nprint(f\"Output size of the multiple attention heads: {output.shape}\")",
+        "detail": "a_003_transformers_basics.a_04_multi_head_attention",
+        "documentation": {}
+    },
+    {
+        "label": "input",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_04_multi_head_attention",
+        "description": "a_003_transformers_basics.a_04_multi_head_attention",
+        "peekOfCode": "input = torch.rand(8, config[\"context_size\"], config[\"embedding_dim\"])\nmha = MultiHeadAttention(config)\noutput = mha(input)\nprint(f\"Output size of the multiple attention heads: {output.shape}\")",
+        "detail": "a_003_transformers_basics.a_04_multi_head_attention",
+        "documentation": {}
+    },
+    {
+        "label": "mha",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_04_multi_head_attention",
+        "description": "a_003_transformers_basics.a_04_multi_head_attention",
+        "peekOfCode": "mha = MultiHeadAttention(config)\noutput = mha(input)\nprint(f\"Output size of the multiple attention heads: {output.shape}\")",
+        "detail": "a_003_transformers_basics.a_04_multi_head_attention",
+        "documentation": {}
+    },
+    {
+        "label": "output",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_04_multi_head_attention",
+        "description": "a_003_transformers_basics.a_04_multi_head_attention",
+        "peekOfCode": "output = mha(input)\nprint(f\"Output size of the multiple attention heads: {output.shape}\")",
+        "detail": "a_003_transformers_basics.a_04_multi_head_attention",
+        "documentation": {}
+    },
+    {
+        "label": "FeedForward",
+        "kind": 6,
+        "importPath": "a_003_transformers_basics.a_05_feedforward",
+        "description": "a_003_transformers_basics.a_05_feedforward",
+        "peekOfCode": "class FeedForward(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        # create a sequential nn with the following layers\n        # 1. expand the input size to 4 times\n        # 2. pass it through gelu\n        # 3. contract the output size back to original\n        # 4. pass it through dropout layer\n        self.linear_layers = nn.Sequential(\n            nn.Linear(config[\"embedding_dim\"], config[\"embedding_dim\"]*4),",
+        "detail": "a_003_transformers_basics.a_05_feedforward",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_05_feedforward",
+        "description": "a_003_transformers_basics.a_05_feedforward",
+        "peekOfCode": "text = Path('../training-data/tiny-shakespeare.txt').read_text()\ntokenizer = CharTokenizer.trainFromText(text)\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms",
+        "detail": "a_003_transformers_basics.a_05_feedforward",
+        "documentation": {}
+    },
+    {
+        "label": "tokenizer",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_05_feedforward",
+        "description": "a_003_transformers_basics.a_05_feedforward",
+        "peekOfCode": "tokenizer = CharTokenizer.trainFromText(text)\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}",
+        "detail": "a_003_transformers_basics.a_05_feedforward",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_05_feedforward",
+        "description": "a_003_transformers_basics.a_05_feedforward",
+        "peekOfCode": "config = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}\nconfig[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]",
+        "detail": "a_003_transformers_basics.a_05_feedforward",
+        "documentation": {}
+    },
+    {
+        "label": "config[\"head_size\"]",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_05_feedforward",
+        "description": "a_003_transformers_basics.a_05_feedforward",
+        "peekOfCode": "config[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]\n####### Runner code #######\nff = FeedForward(config)\ninp = torch.rand(8, config[\"context_size\"], config[\"embedding_dim\"])\noutput = ff(inp)\nprint(output.shape)",
+        "detail": "a_003_transformers_basics.a_05_feedforward",
+        "documentation": {}
+    },
+    {
+        "label": "ff",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_05_feedforward",
+        "description": "a_003_transformers_basics.a_05_feedforward",
+        "peekOfCode": "ff = FeedForward(config)\ninp = torch.rand(8, config[\"context_size\"], config[\"embedding_dim\"])\noutput = ff(inp)\nprint(output.shape)",
+        "detail": "a_003_transformers_basics.a_05_feedforward",
+        "documentation": {}
+    },
+    {
+        "label": "inp",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_05_feedforward",
+        "description": "a_003_transformers_basics.a_05_feedforward",
+        "peekOfCode": "inp = torch.rand(8, config[\"context_size\"], config[\"embedding_dim\"])\noutput = ff(inp)\nprint(output.shape)",
+        "detail": "a_003_transformers_basics.a_05_feedforward",
+        "documentation": {}
+    },
+    {
+        "label": "output",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_05_feedforward",
+        "description": "a_003_transformers_basics.a_05_feedforward",
+        "peekOfCode": "output = ff(inp)\nprint(output.shape)",
+        "detail": "a_003_transformers_basics.a_05_feedforward",
+        "documentation": {}
+    },
+    {
+        "label": "TransformerBlock",
+        "kind": 6,
+        "importPath": "a_003_transformers_basics.a_06_transformer_block",
+        "description": "a_003_transformers_basics.a_06_transformer_block",
+        "peekOfCode": "class TransformerBlock(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        # set the following elements in the self\n        # - multi head attention block\n        # - normalisation layer 1\n        # - feedforward layer\n        # - normalisation layer 2\n        self.multi_head = MultiHeadAttention(config)\n        self.layer_norm_1 = nn.LayerNorm(config[\"embedding_dim\"])",
+        "detail": "a_003_transformers_basics.a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_06_transformer_block",
+        "description": "a_003_transformers_basics.a_06_transformer_block",
+        "peekOfCode": "text = Path('../training-data/tiny-shakespeare.txt').read_text()\ntokenizer = CharTokenizer.trainFromText(text)\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms",
+        "detail": "a_003_transformers_basics.a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "tokenizer",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_06_transformer_block",
+        "description": "a_003_transformers_basics.a_06_transformer_block",
+        "peekOfCode": "tokenizer = CharTokenizer.trainFromText(text)\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}",
+        "detail": "a_003_transformers_basics.a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_06_transformer_block",
+        "description": "a_003_transformers_basics.a_06_transformer_block",
+        "peekOfCode": "config = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}\nconfig[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]",
+        "detail": "a_003_transformers_basics.a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "config[\"head_size\"]",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_06_transformer_block",
+        "description": "a_003_transformers_basics.a_06_transformer_block",
+        "peekOfCode": "config[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]\n####### Runner code ########\ntb = TransformerBlock(config)\ninput = torch.rand(8, config[\"context_size\"], config[\"embedding_dim\"])\noutput = tb(input)\nprint(output.shape)",
+        "detail": "a_003_transformers_basics.a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "tb",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_06_transformer_block",
+        "description": "a_003_transformers_basics.a_06_transformer_block",
+        "peekOfCode": "tb = TransformerBlock(config)\ninput = torch.rand(8, config[\"context_size\"], config[\"embedding_dim\"])\noutput = tb(input)\nprint(output.shape)",
+        "detail": "a_003_transformers_basics.a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "input",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_06_transformer_block",
+        "description": "a_003_transformers_basics.a_06_transformer_block",
+        "peekOfCode": "input = torch.rand(8, config[\"context_size\"], config[\"embedding_dim\"])\noutput = tb(input)\nprint(output.shape)",
+        "detail": "a_003_transformers_basics.a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "output",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_06_transformer_block",
+        "description": "a_003_transformers_basics.a_06_transformer_block",
+        "peekOfCode": "output = tb(input)\nprint(output.shape)",
+        "detail": "a_003_transformers_basics.a_06_transformer_block",
         "documentation": {}
     }
 ]

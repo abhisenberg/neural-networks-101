@@ -50,35 +50,22 @@ class AttentionHead(nn.Module):
         causal_attention_mask = torch.tril(torch.ones(config['context_size'], config['context_size']))
         self.register_buffer("causal_attention_mask", causal_attention_mask)
 
-        print(f"WQ: {self.WQ}, WK: {self.WK}, Wv: {self.WV}")
-
     def forward(self, input):   # (B, C, embedding_dim)
         batch_size, tokens_num, embedding_dim = input.shape
         Q = self.WQ(input)  # (B, C, head_size)
         K = self.WK(input)  # (B, C, head_size)
         V = self.WV(input)  # (B, C, head_size)
 
-        print(f"WQ: {self.WQ}, Q: {Q}")
-        print(f"WK: {self.WK}, K: {K}")
-        print(f"WV: {self.WV}, V: {V}")
-
         attention_scores = Q @ K.transpose(1,2) # (B, C, C)
-
-        print(f"1. Att scores: {attention_scores}")
 
         attention_scores = attention_scores.masked_fill(
             self.causal_attention_mask[:tokens_num, :tokens_num] == 0,
             -torch.inf
         )
 
-        print(f"2. Att scores: {attention_scores}")
-
         attention_scores = attention_scores / (K.shape[-1] ** 0.5)
-        print(f"3. Att scores: {attention_scores}")
         attention_scores = torch.softmax(attention_scores, dim=-1)
-        print(f"4. Att scores: {attention_scores}")
         attention_scores = self.dropout(attention_scores)
-        print(f"5. Att scores: {attention_scores}")
 
         return attention_scores @ V # (B, C, head_size)
 
@@ -93,4 +80,4 @@ inp = torch.rand(1, config['context_size'], config['embedding_dim'])
 
 ah = AttentionHead(config)
 output = ah(inp)
-print(output.shape)
+print(f"Output size of a single attention head: {output.shape}")
