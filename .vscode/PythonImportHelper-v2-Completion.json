@@ -227,11 +227,67 @@
         "documentation": {}
     },
     {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "Dataset",
         "importPath": "torch.utils.data",
         "description": "torch.utils.data",
         "isExtraImport": true,
         "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "RandomSampler",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "CharTokenizer",
+        "importPath": "a_01_tokenizer",
+        "description": "a_01_tokenizer",
+        "isExtraImport": true,
+        "detail": "a_01_tokenizer",
+        "documentation": {}
+    },
+    {
+        "label": "CharTokenizer",
+        "importPath": "a_01_tokenizer",
+        "description": "a_01_tokenizer",
+        "isExtraImport": true,
+        "detail": "a_01_tokenizer",
         "documentation": {}
     },
     {
@@ -284,6 +340,23 @@
         "documentation": {}
     },
     {
+        "label": "a_02_data_loader",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "a_02_data_loader",
+        "description": "a_02_data_loader",
+        "detail": "a_02_data_loader",
+        "documentation": {}
+    },
+    {
+        "label": "TokenIDsDataset",
+        "importPath": "a_02_data_loader",
+        "description": "a_02_data_loader",
+        "isExtraImport": true,
+        "detail": "a_02_data_loader",
+        "documentation": {}
+    },
+    {
         "label": "TokenIDsDataset",
         "importPath": "a_02_data_loader",
         "description": "a_02_data_loader",
@@ -316,282 +389,314 @@
         "documentation": {}
     },
     {
+        "label": "TransformerBlock",
+        "importPath": "a_06_transformer_block",
+        "description": "a_06_transformer_block",
+        "isExtraImport": true,
+        "detail": "a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "TransformerBlock",
+        "importPath": "a_06_transformer_block",
+        "description": "a_06_transformer_block",
+        "isExtraImport": true,
+        "detail": "a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "DemoGPT",
+        "importPath": "a_07_gpt_class",
+        "description": "a_07_gpt_class",
+        "isExtraImport": true,
+        "detail": "a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "generate_with_prompt",
+        "importPath": "a_07_gpt_class",
+        "description": "a_07_gpt_class",
+        "isExtraImport": true,
+        "detail": "a_07_gpt_class",
+        "documentation": {}
+    },
+    {
         "label": "dataset",
         "kind": 5,
-        "importPath": "a_002_basic_nn.01-mnist",
-        "description": "a_002_basic_nn.01-mnist",
+        "importPath": "a_001_basic_nn.01-mnist",
+        "description": "a_001_basic_nn.01-mnist",
         "peekOfCode": "dataset = \"F_MNIST_data\"\ntrained_dataset_name = \"f_mnist_model.pth\"\n# step 1: load the data, normalize it\ntransform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)),])\ntrainset =  datasets.MNIST('~/pytorch/'+dataset+'/', download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: define the model, the criterion (error function), optim (gradient function)\nmodel = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),",
-        "detail": "a_002_basic_nn.01-mnist",
+        "detail": "a_001_basic_nn.01-mnist",
         "documentation": {}
     },
     {
         "label": "trained_dataset_name",
         "kind": 5,
-        "importPath": "a_002_basic_nn.01-mnist",
-        "description": "a_002_basic_nn.01-mnist",
+        "importPath": "a_001_basic_nn.01-mnist",
+        "description": "a_001_basic_nn.01-mnist",
         "peekOfCode": "trained_dataset_name = \"f_mnist_model.pth\"\n# step 1: load the data, normalize it\ntransform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)),])\ntrainset =  datasets.MNIST('~/pytorch/'+dataset+'/', download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: define the model, the criterion (error function), optim (gradient function)\nmodel = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),",
-        "detail": "a_002_basic_nn.01-mnist",
+        "detail": "a_001_basic_nn.01-mnist",
         "documentation": {}
     },
     {
         "label": "transform",
         "kind": 5,
-        "importPath": "a_002_basic_nn.01-mnist",
-        "description": "a_002_basic_nn.01-mnist",
+        "importPath": "a_001_basic_nn.01-mnist",
+        "description": "a_001_basic_nn.01-mnist",
         "peekOfCode": "transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)),])\ntrainset =  datasets.MNIST('~/pytorch/'+dataset+'/', download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: define the model, the criterion (error function), optim (gradient function)\nmodel = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),\n    nn.ReLU(),\n    nn.Linear(128, 64),",
-        "detail": "a_002_basic_nn.01-mnist",
+        "detail": "a_001_basic_nn.01-mnist",
         "documentation": {}
     },
     {
         "label": "trainset",
         "kind": 5,
-        "importPath": "a_002_basic_nn.01-mnist",
-        "description": "a_002_basic_nn.01-mnist",
+        "importPath": "a_001_basic_nn.01-mnist",
+        "description": "a_001_basic_nn.01-mnist",
         "peekOfCode": "trainset =  datasets.MNIST('~/pytorch/'+dataset+'/', download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: define the model, the criterion (error function), optim (gradient function)\nmodel = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),\n    nn.ReLU(),\n    nn.Linear(128, 64),\n    nn.ReLU(),",
-        "detail": "a_002_basic_nn.01-mnist",
+        "detail": "a_001_basic_nn.01-mnist",
         "documentation": {}
     },
     {
         "label": "trainloader",
         "kind": 5,
-        "importPath": "a_002_basic_nn.01-mnist",
-        "description": "a_002_basic_nn.01-mnist",
+        "importPath": "a_001_basic_nn.01-mnist",
+        "description": "a_001_basic_nn.01-mnist",
         "peekOfCode": "trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: define the model, the criterion (error function), optim (gradient function)\nmodel = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),\n    nn.ReLU(),\n    nn.Linear(128, 64),\n    nn.ReLU(),\n    nn.Linear(64, 10),",
-        "detail": "a_002_basic_nn.01-mnist",
+        "detail": "a_001_basic_nn.01-mnist",
         "documentation": {}
     },
     {
         "label": "model",
         "kind": 5,
-        "importPath": "a_002_basic_nn.01-mnist",
-        "description": "a_002_basic_nn.01-mnist",
+        "importPath": "a_001_basic_nn.01-mnist",
+        "description": "a_001_basic_nn.01-mnist",
         "peekOfCode": "model = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),\n    nn.ReLU(),\n    nn.Linear(128, 64),\n    nn.ReLU(),\n    nn.Linear(64, 10),\n    nn.LogSoftmax(dim=1)\n)",
-        "detail": "a_002_basic_nn.01-mnist",
+        "detail": "a_001_basic_nn.01-mnist",
         "documentation": {}
     },
     {
         "label": "criterion",
         "kind": 5,
-        "importPath": "a_002_basic_nn.01-mnist",
-        "description": "a_002_basic_nn.01-mnist",
+        "importPath": "a_001_basic_nn.01-mnist",
+        "description": "a_001_basic_nn.01-mnist",
         "peekOfCode": "criterion = nn.NLLLoss()\noptimizer = optim.SGD(model.parameters(), lr=0.003)\n# step 3: run the training in loops\nepochs = 5\nfor e in range(epochs):\n    runningloss = 0\n    for images, labels in trainloader:\n        optimizer.zero_grad()   #3a. clear the older grad values, bcs they accumulate\n        images = images.view(images.shape[0], -1)   #3b. flatten the images\n        output = model.forward(images)      #3c. forward pass to get the output",
-        "detail": "a_002_basic_nn.01-mnist",
+        "detail": "a_001_basic_nn.01-mnist",
         "documentation": {}
     },
     {
         "label": "optimizer",
         "kind": 5,
-        "importPath": "a_002_basic_nn.01-mnist",
-        "description": "a_002_basic_nn.01-mnist",
+        "importPath": "a_001_basic_nn.01-mnist",
+        "description": "a_001_basic_nn.01-mnist",
         "peekOfCode": "optimizer = optim.SGD(model.parameters(), lr=0.003)\n# step 3: run the training in loops\nepochs = 5\nfor e in range(epochs):\n    runningloss = 0\n    for images, labels in trainloader:\n        optimizer.zero_grad()   #3a. clear the older grad values, bcs they accumulate\n        images = images.view(images.shape[0], -1)   #3b. flatten the images\n        output = model.forward(images)      #3c. forward pass to get the output\n        loss = criterion(output, labels)    #3d. calculate loss from the output",
-        "detail": "a_002_basic_nn.01-mnist",
+        "detail": "a_001_basic_nn.01-mnist",
         "documentation": {}
     },
     {
         "label": "epochs",
         "kind": 5,
-        "importPath": "a_002_basic_nn.01-mnist",
-        "description": "a_002_basic_nn.01-mnist",
+        "importPath": "a_001_basic_nn.01-mnist",
+        "description": "a_001_basic_nn.01-mnist",
         "peekOfCode": "epochs = 5\nfor e in range(epochs):\n    runningloss = 0\n    for images, labels in trainloader:\n        optimizer.zero_grad()   #3a. clear the older grad values, bcs they accumulate\n        images = images.view(images.shape[0], -1)   #3b. flatten the images\n        output = model.forward(images)      #3c. forward pass to get the output\n        loss = criterion(output, labels)    #3d. calculate loss from the output\n        loss.backward()     #3e. run the backward pass, calc the gradient values\n        optimizer.step()    #3f. apply the gradient descent and update the weights",
-        "detail": "a_002_basic_nn.01-mnist",
+        "detail": "a_001_basic_nn.01-mnist",
         "documentation": {}
     },
     {
         "label": "dataset",
         "kind": 5,
-        "importPath": "a_002_basic_nn.02-mnist-eval",
-        "description": "a_002_basic_nn.02-mnist-eval",
+        "importPath": "a_001_basic_nn.02-mnist-eval",
+        "description": "a_001_basic_nn.02-mnist-eval",
         "peekOfCode": "dataset = \"F_MNIST_data\"\ntrained_dataset_name = \"f_mnist_model.pth\"\n# step 1: load the data, normalize it\ntransform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)),])\ntrainset =  datasets.MNIST('~/pytorch/'+dataset+'/', download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: create the loaded model, load the training weights\nloaded_model = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),",
-        "detail": "a_002_basic_nn.02-mnist-eval",
+        "detail": "a_001_basic_nn.02-mnist-eval",
         "documentation": {}
     },
     {
         "label": "trained_dataset_name",
         "kind": 5,
-        "importPath": "a_002_basic_nn.02-mnist-eval",
-        "description": "a_002_basic_nn.02-mnist-eval",
+        "importPath": "a_001_basic_nn.02-mnist-eval",
+        "description": "a_001_basic_nn.02-mnist-eval",
         "peekOfCode": "trained_dataset_name = \"f_mnist_model.pth\"\n# step 1: load the data, normalize it\ntransform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)),])\ntrainset =  datasets.MNIST('~/pytorch/'+dataset+'/', download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: create the loaded model, load the training weights\nloaded_model = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),",
-        "detail": "a_002_basic_nn.02-mnist-eval",
+        "detail": "a_001_basic_nn.02-mnist-eval",
         "documentation": {}
     },
     {
         "label": "transform",
         "kind": 5,
-        "importPath": "a_002_basic_nn.02-mnist-eval",
-        "description": "a_002_basic_nn.02-mnist-eval",
+        "importPath": "a_001_basic_nn.02-mnist-eval",
+        "description": "a_001_basic_nn.02-mnist-eval",
         "peekOfCode": "transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)),])\ntrainset =  datasets.MNIST('~/pytorch/'+dataset+'/', download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: create the loaded model, load the training weights\nloaded_model = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),\n    nn.ReLU(),\n    nn.Linear(128, 64),",
-        "detail": "a_002_basic_nn.02-mnist-eval",
+        "detail": "a_001_basic_nn.02-mnist-eval",
         "documentation": {}
     },
     {
         "label": "trainset",
         "kind": 5,
-        "importPath": "a_002_basic_nn.02-mnist-eval",
-        "description": "a_002_basic_nn.02-mnist-eval",
+        "importPath": "a_001_basic_nn.02-mnist-eval",
+        "description": "a_001_basic_nn.02-mnist-eval",
         "peekOfCode": "trainset =  datasets.MNIST('~/pytorch/'+dataset+'/', download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: create the loaded model, load the training weights\nloaded_model = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),\n    nn.ReLU(),\n    nn.Linear(128, 64),\n    nn.ReLU(),",
-        "detail": "a_002_basic_nn.02-mnist-eval",
+        "detail": "a_001_basic_nn.02-mnist-eval",
         "documentation": {}
     },
     {
         "label": "trainloader",
         "kind": 5,
-        "importPath": "a_002_basic_nn.02-mnist-eval",
-        "description": "a_002_basic_nn.02-mnist-eval",
+        "importPath": "a_001_basic_nn.02-mnist-eval",
+        "description": "a_001_basic_nn.02-mnist-eval",
         "peekOfCode": "trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# step 2: create the loaded model, load the training weights\nloaded_model = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),\n    nn.ReLU(),\n    nn.Linear(128, 64),\n    nn.ReLU(),\n    nn.Linear(64, 10),",
-        "detail": "a_002_basic_nn.02-mnist-eval",
+        "detail": "a_001_basic_nn.02-mnist-eval",
         "documentation": {}
     },
     {
         "label": "loaded_model",
         "kind": 5,
-        "importPath": "a_002_basic_nn.02-mnist-eval",
-        "description": "a_002_basic_nn.02-mnist-eval",
+        "importPath": "a_001_basic_nn.02-mnist-eval",
+        "description": "a_001_basic_nn.02-mnist-eval",
         "peekOfCode": "loaded_model = nn.Sequential(\n    nn.Linear(784, 256),\n    nn.ReLU(),\n    nn.Linear(256, 128),\n    nn.ReLU(),\n    nn.Linear(128, 64),\n    nn.ReLU(),\n    nn.Linear(64, 10),\n    nn.LogSoftmax(dim=1)\n)",
-        "detail": "a_002_basic_nn.02-mnist-eval",
+        "detail": "a_001_basic_nn.02-mnist-eval",
         "documentation": {}
     },
     {
         "label": "Classifier",
         "kind": 6,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "class Classifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(784, 256)\n        self.fc2 = nn.Linear(256, 128)\n        self.fc3 = nn.Linear(128, 64)\n        self.fc4 = nn.Linear(64, 10)\n        # Dropout module with 0.2 drop probability\n        self.dropout = nn.Dropout(p=0.2)\n    def forward(self, x):",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "dataset",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "dataset = \"F_MNIST_data\"\ntrained_dataset_name = \"f_mnist_dropout_model.pth\"\n# Define a transform to normalize the data\ntransform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, ), (0.5, ))])\n# Download and load the training data\ntrainset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# Download and load the test data\ntestset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=False, transform=transform)\ntestloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "trained_dataset_name",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "trained_dataset_name = \"f_mnist_dropout_model.pth\"\n# Define a transform to normalize the data\ntransform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, ), (0.5, ))])\n# Download and load the training data\ntrainset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# Download and load the test data\ntestset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=False, transform=transform)\ntestloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)\nclass Classifier(nn.Module):",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "transform",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, ), (0.5, ))])\n# Download and load the training data\ntrainset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# Download and load the test data\ntestset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=False, transform=transform)\ntestloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)\nclass Classifier(nn.Module):\n    def __init__(self):\n        super().__init__()",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "trainset",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "trainset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=True, transform=transform)\ntrainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# Download and load the test data\ntestset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=False, transform=transform)\ntestloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)\nclass Classifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(784, 256)\n        self.fc2 = nn.Linear(256, 128)",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "trainloader",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)\n# Download and load the test data\ntestset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=False, transform=transform)\ntestloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)\nclass Classifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(784, 256)\n        self.fc2 = nn.Linear(256, 128)\n        self.fc3 = nn.Linear(128, 64)",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "testset",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "testset = datasets.FashionMNIST(f\"~/.pytorch/{dataset}/\", download=True, train=False, transform=transform)\ntestloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)\nclass Classifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(784, 256)\n        self.fc2 = nn.Linear(256, 128)\n        self.fc3 = nn.Linear(128, 64)\n        self.fc4 = nn.Linear(64, 10)\n        # Dropout module with 0.2 drop probability",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "testloader",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)\nclass Classifier(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(784, 256)\n        self.fc2 = nn.Linear(256, 128)\n        self.fc3 = nn.Linear(128, 64)\n        self.fc4 = nn.Linear(64, 10)\n        # Dropout module with 0.2 drop probability\n        self.dropout = nn.Dropout(p=0.2)",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "model",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "model = Classifier()\ncriterion = nn.NLLLoss()\noptimizer = optim.Adam(model.parameters(), lr=0.003)\nepochs = 30\nsteps = 0\ntrain_losses, test_losses = [], []\nfor e in range(epochs):\n    running_loss = 0\n    model.train()\n    print(f\"Running for epoch {e+1}...\")",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "criterion",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "criterion = nn.NLLLoss()\noptimizer = optim.Adam(model.parameters(), lr=0.003)\nepochs = 30\nsteps = 0\ntrain_losses, test_losses = [], []\nfor e in range(epochs):\n    running_loss = 0\n    model.train()\n    print(f\"Running for epoch {e+1}...\")\n    for images, labels in trainloader:",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "optimizer",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "optimizer = optim.Adam(model.parameters(), lr=0.003)\nepochs = 30\nsteps = 0\ntrain_losses, test_losses = [], []\nfor e in range(epochs):\n    running_loss = 0\n    model.train()\n    print(f\"Running for epoch {e+1}...\")\n    for images, labels in trainloader:\n        optimizer.zero_grad()",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "epochs",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "epochs = 30\nsteps = 0\ntrain_losses, test_losses = [], []\nfor e in range(epochs):\n    running_loss = 0\n    model.train()\n    print(f\"Running for epoch {e+1}...\")\n    for images, labels in trainloader:\n        optimizer.zero_grad()\n        log_ps = model(images)",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "steps",
         "kind": 5,
-        "importPath": "a_002_basic_nn.03-fmnist-dropout",
-        "description": "a_002_basic_nn.03-fmnist-dropout",
+        "importPath": "a_001_basic_nn.03-fmnist-dropout",
+        "description": "a_001_basic_nn.03-fmnist-dropout",
         "peekOfCode": "steps = 0\ntrain_losses, test_losses = [], []\nfor e in range(epochs):\n    running_loss = 0\n    model.train()\n    print(f\"Running for epoch {e+1}...\")\n    for images, labels in trainloader:\n        optimizer.zero_grad()\n        log_ps = model(images)\n        loss = criterion(log_ps, labels)",
-        "detail": "a_002_basic_nn.03-fmnist-dropout",
+        "detail": "a_001_basic_nn.03-fmnist-dropout",
         "documentation": {}
     },
     {
         "label": "Network",
         "kind": 6,
-        "importPath": "a_002_basic_nn.04-generic-model",
-        "description": "a_002_basic_nn.04-generic-model",
+        "importPath": "a_001_basic_nn.04-generic-model",
+        "description": "a_001_basic_nn.04-generic-model",
         "peekOfCode": "class Network(nn.Module):\n    def __init__(self, input_nodes, output_nodes, hidden_nodes_list, drop_p=0.5):        \n        super.__init__()\n        # create the input layer\n        self.input_layer = nn.Linear(input_nodes, hidden_nodes_list[0])\n        # create a list of tuples for the hidden layer nodes, and create hidden layers\n        hidden_layer_sizes = zip(hidden_nodes_list[:-1], hidden_nodes_list[1:])\n        self.hidden_layers = nn.ModuleList([nn.input(h1, h2) for (h1, h2) in hidden_layer_sizes])\n        # create the output layer\n        self.output_layer = nn.Linear(hidden_nodes_list[-1], output_nodes)",
-        "detail": "a_002_basic_nn.04-generic-model",
+        "detail": "a_001_basic_nn.04-generic-model",
         "documentation": {}
     },
     {
         "label": "train",
         "kind": 2,
-        "importPath": "a_002_basic_nn.04-generic-model",
-        "description": "a_002_basic_nn.04-generic-model",
+        "importPath": "a_001_basic_nn.04-generic-model",
+        "description": "a_001_basic_nn.04-generic-model",
         "peekOfCode": "def train(model, trainloader, testloader, criterion, optimizer, epochs=5, print_every=50):\n    steps = 0\n    for e in range(epochs):\n        runningloss = 0\n        for images, labels in trainloader:\n            steps += 1\n            images = images.view(images.shape[0], -1)\n            optimizer.zero_grad()   # clear the previous grads\n            output = model.forward(images)   # get the output \n            loss = criterion(output, labels)    # get the loss",
-        "detail": "a_002_basic_nn.04-generic-model",
+        "detail": "a_001_basic_nn.04-generic-model",
         "documentation": {}
     },
     {
         "label": "validation",
         "kind": 2,
-        "importPath": "a_002_basic_nn.04-generic-model",
-        "description": "a_002_basic_nn.04-generic-model",
+        "importPath": "a_001_basic_nn.04-generic-model",
+        "description": "a_001_basic_nn.04-generic-model",
         "peekOfCode": "def validation(model, testloader, criterion):\n    accuracy, loss = 0, 0\n    for images, labels in testloader:\n        images = images.view(images.shape[0], -1)\n        output = model.forward(images)\n        # calculate the loss\n        loss += criterion(output, labels)\n        # calculate the accuracy\n        ps = torch.exp(output)  #since output is in log_softmax, take exp to get actual probs\n        equality = (labels.data == ps.max(1)[1])",
-        "detail": "a_002_basic_nn.04-generic-model",
+        "detail": "a_001_basic_nn.04-generic-model",
         "documentation": {}
     },
     {
@@ -1105,6 +1210,240 @@
         "description": "a_003_transformers_basics.a_06_transformer_block",
         "peekOfCode": "output = tb(input)\nprint(output.shape)",
         "detail": "a_003_transformers_basics.a_06_transformer_block",
+        "documentation": {}
+    },
+    {
+        "label": "DemoGPT",
+        "kind": 6,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "class DemoGPT(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        # create an embedding layer, token_embedding_layer with size vocab_size -> embedding_dim\n        # create an embedding layer, positional_embedding_layer with size context_size -> embedding_dim\n        self.token_embedding_layer = nn.Embedding(config[\"vocabulary_size\"], config[\"embedding_dim\"])\n        self.positional_embedding_layer = nn.Embedding(config[\"context_size\"], config[\"embedding_dim\"])\n        # create a set of blocks, create a sequential layer using those blocks\n        blocks = [TransformerBlock(config) for _ in range(config[\"layers_num\"])]\n        self.transformer_block_layers = nn.Sequential(*blocks)",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "generate",
+        "kind": 2,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "def generate(model, prompt_ids, max_tokens):\n    # The function initializes output_ids with the prompt and then iteratively generates max_tokens new tokens, one at a time.\n    output_ids = prompt_ids\n    for _ in range(max_tokens):\n        # This stops generation if the sequence exceeds the model's maximum context size (the maximum sequence length the model was designed to handle).\n        if output_ids.shape[1] >= config[\"context_size\"]:\n            break\n        # Disables gradient tracking to save memory during inference. The model processes the entire sequence so far and returns logits (raw, unnormalized predictions)\n        with torch.no_grad():\n            logits = model(output_ids)",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "generate_with_prompt",
+        "kind": 2,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "def generate_with_prompt(model, tokenizer, prompt, max_tokens=1000):\n    model.eval()\n    prompt = tokenizer.encode(prompt).unsqueeze(dim=0).to(device)\n    response_tokens = generate(model, prompt, max_tokens=max_tokens)\n    return tokenizer.decode(response_tokens[0])\ngenerated_prompt = generate_with_prompt(model, tokenizer, \"First Citizen:\\n\")\nprint(generated_prompt)",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "text = Path('../training-data/tiny-shakespeare.txt').read_text()\ntokenizer = CharTokenizer.trainFromText(text)\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "tokenizer",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "tokenizer = CharTokenizer.trainFromText(text)\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "config = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}\nconfig[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "config[\"head_size\"]",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "config[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]\n######## Main class ##########\n# Use CUDA if available\ndevice = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\nclass DemoGPT(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        # create an embedding layer, token_embedding_layer with size vocab_size -> embedding_dim\n        # create an embedding layer, positional_embedding_layer with size context_size -> embedding_dim\n        self.token_embedding_layer = nn.Embedding(config[\"vocabulary_size\"], config[\"embedding_dim\"])",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "device",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\nclass DemoGPT(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        # create an embedding layer, token_embedding_layer with size vocab_size -> embedding_dim\n        # create an embedding layer, positional_embedding_layer with size context_size -> embedding_dim\n        self.token_embedding_layer = nn.Embedding(config[\"vocabulary_size\"], config[\"embedding_dim\"])\n        self.positional_embedding_layer = nn.Embedding(config[\"context_size\"], config[\"embedding_dim\"])\n        # create a set of blocks, create a sequential layer using those blocks\n        blocks = [TransformerBlock(config) for _ in range(config[\"layers_num\"])]",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "model = DemoGPT(config).to(device)\noutput = model(tokenizer.encode(\"hi\").unsqueeze(dim=0).to(device))\nprint(output.shape)\ndef generate(model, prompt_ids, max_tokens):\n    # The function initializes output_ids with the prompt and then iteratively generates max_tokens new tokens, one at a time.\n    output_ids = prompt_ids\n    for _ in range(max_tokens):\n        # This stops generation if the sequence exceeds the model's maximum context size (the maximum sequence length the model was designed to handle).\n        if output_ids.shape[1] >= config[\"context_size\"]:\n            break",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "output",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "output = model(tokenizer.encode(\"hi\").unsqueeze(dim=0).to(device))\nprint(output.shape)\ndef generate(model, prompt_ids, max_tokens):\n    # The function initializes output_ids with the prompt and then iteratively generates max_tokens new tokens, one at a time.\n    output_ids = prompt_ids\n    for _ in range(max_tokens):\n        # This stops generation if the sequence exceeds the model's maximum context size (the maximum sequence length the model was designed to handle).\n        if output_ids.shape[1] >= config[\"context_size\"]:\n            break\n        # Disables gradient tracking to save memory during inference. The model processes the entire sequence so far and returns logits (raw, unnormalized predictions)",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "generated_prompt",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_07_gpt_class",
+        "description": "a_003_transformers_basics.a_07_gpt_class",
+        "peekOfCode": "generated_prompt = generate_with_prompt(model, tokenizer, \"First Citizen:\\n\")\nprint(generated_prompt)",
+        "detail": "a_003_transformers_basics.a_07_gpt_class",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "text = Path('../training-data/tiny-shakespeare.txt').read_text()\ntokenizer = CharTokenizer.trainFromText(text)\n# Use CUDA if available\ndevice = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "tokenizer",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "tokenizer = CharTokenizer.trainFromText(text)\n# Use CUDA if available\ndevice = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "device",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\nconfig = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "config = {\n    \"vocabulary_size\": tokenizer.vocabSize(),   #size of vocab / # of unique token IDs that it supports\n    \"context_size\": 32,    #lentgh of the context window / max number of tokens the model can see at once\n    \"embedding_dim\": 64,   #length of the embedding vector, each token will be converted to an embedding vector of this length\n    \"heads_num\": 4,        #num of attention heads we'll have in the model, each of them will process the input independently\n    \"layers_num\": 2,       #num of layers / transformers blocks in the model\n    \"dropout_rate\": 0.1,    #probability of dropping out nodes on random\n    \"use_bias\": False,      #whether the linear transformations should include bias terms\n}\nconfig[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "config[\"head_size\"]",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "config[\"head_size\"] = config[\"embedding_dim\"] // config[\"heads_num\"]\n######## Defining model ####### \nmodel = DemoGPT(config).to(device)\n######## Training Parameters ####### \nbatch_size = 64\ntrain_iterations = 5000\nevaluation_interval = 100\nlearning_rate = 4e-4\ntrain_data = tokenizer.encode(text).to(device)\ntrain_dataset = TokenIDsDataset(train_data, config[\"context_size\"])",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "model = DemoGPT(config).to(device)\n######## Training Parameters ####### \nbatch_size = 64\ntrain_iterations = 5000\nevaluation_interval = 100\nlearning_rate = 4e-4\ntrain_data = tokenizer.encode(text).to(device)\ntrain_dataset = TokenIDsDataset(train_data, config[\"context_size\"])\ntrain_sampler = RandomSampler(train_dataset, num_samples=batch_size * train_iterations, replacement=True)\ntrain_dataloader = DataLoader(train_dataset, batch_size=batch_size, sampler=train_sampler)",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "batch_size",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "batch_size = 64\ntrain_iterations = 5000\nevaluation_interval = 100\nlearning_rate = 4e-4\ntrain_data = tokenizer.encode(text).to(device)\ntrain_dataset = TokenIDsDataset(train_data, config[\"context_size\"])\ntrain_sampler = RandomSampler(train_dataset, num_samples=batch_size * train_iterations, replacement=True)\ntrain_dataloader = DataLoader(train_dataset, batch_size=batch_size, sampler=train_sampler)\n# optimizer for BP param updation\noptimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "train_iterations",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "train_iterations = 5000\nevaluation_interval = 100\nlearning_rate = 4e-4\ntrain_data = tokenizer.encode(text).to(device)\ntrain_dataset = TokenIDsDataset(train_data, config[\"context_size\"])\ntrain_sampler = RandomSampler(train_dataset, num_samples=batch_size * train_iterations, replacement=True)\ntrain_dataloader = DataLoader(train_dataset, batch_size=batch_size, sampler=train_sampler)\n# optimizer for BP param updation\noptimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)\n# training loop",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "evaluation_interval",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "evaluation_interval = 100\nlearning_rate = 4e-4\ntrain_data = tokenizer.encode(text).to(device)\ntrain_dataset = TokenIDsDataset(train_data, config[\"context_size\"])\ntrain_sampler = RandomSampler(train_dataset, num_samples=batch_size * train_iterations, replacement=True)\ntrain_dataloader = DataLoader(train_dataset, batch_size=batch_size, sampler=train_sampler)\n# optimizer for BP param updation\noptimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)\n# training loop\nfor step_num, sample in enumerate(train_dataloader):",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "learning_rate",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "learning_rate = 4e-4\ntrain_data = tokenizer.encode(text).to(device)\ntrain_dataset = TokenIDsDataset(train_data, config[\"context_size\"])\ntrain_sampler = RandomSampler(train_dataset, num_samples=batch_size * train_iterations, replacement=True)\ntrain_dataloader = DataLoader(train_dataset, batch_size=batch_size, sampler=train_sampler)\n# optimizer for BP param updation\noptimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)\n# training loop\nfor step_num, sample in enumerate(train_dataloader):\n    model.train()",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "train_data",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "train_data = tokenizer.encode(text).to(device)\ntrain_dataset = TokenIDsDataset(train_data, config[\"context_size\"])\ntrain_sampler = RandomSampler(train_dataset, num_samples=batch_size * train_iterations, replacement=True)\ntrain_dataloader = DataLoader(train_dataset, batch_size=batch_size, sampler=train_sampler)\n# optimizer for BP param updation\noptimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)\n# training loop\nfor step_num, sample in enumerate(train_dataloader):\n    model.train()\n    input, targets = sample",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "train_dataset",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "train_dataset = TokenIDsDataset(train_data, config[\"context_size\"])\ntrain_sampler = RandomSampler(train_dataset, num_samples=batch_size * train_iterations, replacement=True)\ntrain_dataloader = DataLoader(train_dataset, batch_size=batch_size, sampler=train_sampler)\n# optimizer for BP param updation\noptimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)\n# training loop\nfor step_num, sample in enumerate(train_dataloader):\n    model.train()\n    input, targets = sample\n    logits = model(input)",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "train_sampler",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "train_sampler = RandomSampler(train_dataset, num_samples=batch_size * train_iterations, replacement=True)\ntrain_dataloader = DataLoader(train_dataset, batch_size=batch_size, sampler=train_sampler)\n# optimizer for BP param updation\noptimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)\n# training loop\nfor step_num, sample in enumerate(train_dataloader):\n    model.train()\n    input, targets = sample\n    logits = model(input)\n    \"\"\"",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "train_dataloader",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "train_dataloader = DataLoader(train_dataset, batch_size=batch_size, sampler=train_sampler)\n# optimizer for BP param updation\noptimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)\n# training loop\nfor step_num, sample in enumerate(train_dataloader):\n    model.train()\n    input, targets = sample\n    logits = model(input)\n    \"\"\"\n    logits_view and targets_view are reshaped versions of the model outputs and target labels:",
+        "detail": "a_003_transformers_basics.a_08_training",
+        "documentation": {}
+    },
+    {
+        "label": "optimizer",
+        "kind": 5,
+        "importPath": "a_003_transformers_basics.a_08_training",
+        "description": "a_003_transformers_basics.a_08_training",
+        "peekOfCode": "optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)\n# training loop\nfor step_num, sample in enumerate(train_dataloader):\n    model.train()\n    input, targets = sample\n    logits = model(input)\n    \"\"\"\n    logits_view and targets_view are reshaped versions of the model outputs and target labels:\n    1. Reshaping Purpose: They convert the 3D tensors (batch_size x sequence_length x vocabulary_size) into 2D tensors to match the expected input format for the loss function.\n    2. Original Shapes:",
+        "detail": "a_003_transformers_basics.a_08_training",
         "documentation": {}
     }
 ]
